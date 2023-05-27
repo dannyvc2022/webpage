@@ -5,27 +5,45 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Simple Statistical Analysis</title>
+  <title>Portfolio Details - Imperial Bootstrap Template</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
+  <!-- Facebook Opengraph integration: https://developers.facebook.com/docs/sharing/opengraph -->
+  <meta property="og:title" content="">
+  <meta property="og:image" content="">
+  <meta property="og:url" content="">
+  <meta property="og:site_name" content="">
+  <meta property="og:description" content="">
+
+  <!-- Twitter Cards integration: https://dev.twitter.com/cards/  -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="">
+  <meta name="twitter:title" content="">
+  <meta name="twitter:description" content="">
+  <meta name="twitter:image" content="">
+
   <!-- Favicons -->
   <link href="assets/img/favicon.png" rel="icon">
-  
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,600,600i,700,700i" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
   <!-- =======================================================
-  * Template Name: WeBuild - v2.2.1
-  * Template URL: https://bootstrapmade.com/free-bootstrap-coming-soon-template-countdwon/
+  * Template Name: Imperial
+  * Updated: Mar 10 2023 with Bootstrap v5.2.3
+  * Template URL: https://bootstrapmade.com/imperial-free-onepage-bootstrap-theme/
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
@@ -34,129 +52,136 @@
 <body>
 
   <!-- ======= Header ======= -->
-  <header id="header">
-    <div class="container-fluid">
+  <header id="header" class="d-flex align-items-center">
+    <div class="container d-flex align-items-center justify-content-between">
 
-      <div class="logo float-left">
-        <h1 class="text-light"><a href="index.html"><span>Vernaza</span></a></h1>
-        
-      </div>      
+      <a href="index.html" class="logo mr-auto"><img src="assets/img/logo.png" alt=""></a>
+      <!-- Uncomment below if you prefer to use a text logo -->
+      <!-- <h1 class="logo mr-auto"><a href="index.html">Imperial</a></h1> -->
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto " href="#hero">Home</a></li>                  
+          <li class="dropdown"><a href="#"><span>Projects</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="#">Resume</a></li>              
+              <li><a href="#">Library Databse</a></li>
+              <li><a href="#">Project 3</a></li>
+              <li><a href="#">Project 4</a></li>
+            </ul>
+          </li>
+          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
 
     </div>
-  </header><!-- End #header -->
-
-  <!-- ======= Hero Section ======= -->
-  <section id="hero">
-    <div class="hero-container"> 
-      <h1>Welcome</h1>
-      <h2>Statistical Analysis</h2>      
-
-      
-        <div class="row no-gutters">
-          <div class="col-md-4 form-group pr-md-1">
-            <input type="text" class="form-control" id="num1" placeholder="First Number"/>
-            
-          </div>
-          <div class="col-md-4 form-group pl-md-1">
-            <input type="text" class="form-control"  id="num2" placeholder="Second Number"/>
-            
-          </div>
-          <div class="col-md-4 form-group pl-md-1">
-            <input type="text" class="form-control"  id="num3" placeholder="Third Number"/>
-            
-          </div>
-          
-        </div>
-
-        <div class="mb-1" hidden="true">
-          <div class="loading">Loading</div>
-          <div class="error-message"></div>
-          <div class="sent-message">Your notification request was sent. Thank you!</div>
-        </div>
-        <div class="text-center"><button type="submit" id="calculate">Calculate!</button></div>
-      
-    </div>
-  </section><!-- End Hero -->
+  </header><!-- End Header -->
 
   <main id="main">
 
-    <!-- ======= Contact Us Section ======= -->
-    <section id="contact" class="contact">
+    <!-- ======= Breadcrumbs ======= -->
+    <section id="breadcrumbs" class="breadcrumbs">
       <div class="container">
 
-        <div class="section-title">
-          <h2 id="results">Results</h2>
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>Project Details</h2>
+          <ol>
+            <li><a href="index.html">Home</a></li>
+            <li>Project Details</li>
+          </ol>
         </div>
 
-        <div class="row contact-info " >
+      </div>
+    </section><!-- End Breadcrumbs -->
 
-          <div class="col-md-2">
-            <div class="contact-address">              
-              <h3>Max</h3>
-              <div id="max_result"></div>
+    <!-- ======= Portfolio Details Section ======= -->
+    <section id="portfolio-details" class="portfolio-details">
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-8">
+            <div class="portfolio-details-slider swiper">
+              <div class="swiper-wrapper align-items-center">
+
+                <div class="swiper-slide">
+                  <img src="assets/img/portfolio/portfolio-details-1.jpg" alt="">
+                </div>
+
+                <div class="swiper-slide">
+                  <img src="assets/img/portfolio/portfolio-details-2.jpg" alt="">
+                </div>
+
+                <div class="swiper-slide">
+                  <img src="assets/img/portfolio/portfolio-details-3.jpg" alt="">
+                </div>
+
+              </div>
+              <div class="swiper-pagination"></div>
             </div>
           </div>
 
-          <div class="col-md-2">
-            <div class="contact-phone">  
-              <h3>Min</h3>
-              <div id="min_result"></div>
+          <div class="col-lg-4">
+            <div class="portfolio-info">
+              <h3>Project information</h3>
+              <ul>
+                <li><strong>Category</strong>: Database</li>
+                <li><strong>Tools Used</strong>: MariaDB, SQL, phpMyAdmin, MS Office</li>               
+                <li><strong>Project Repo</strong>: <a href="https://github.com/dannyvc2022/Library-DB">https://github.com/dannyvc2022/Library-DB</a></li>
+                <br>
+                <p>Designed and created a database for a fictional library. The database has 3 tables that show what books they have, who are the members and who has any books checked out, 
+                  the database also has functions to checkout and return books. </p>                  
+              </ul>
+            </div>
+            <div class="portfolio-description">
+              <h2>Video Presentation</h2>
+              <p>
+                <iframe width="440" height="235" src="https://www.youtube.com/embed/T3CU29YVbl0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+              </p>
             </div>
           </div>
 
-          <div class="col-md-2">
-            <div class="contact-address">              
-              <h3>Average</h3>
-              <div id="avg_result"></div>
-            </div>
-          </div>
-
-          <div class="col-md-2">
-            <div class="contact-phone">              
-              <h3>Median</h3>
-              <div id="median_result"></div>
-            </div>
-          </div>
-
-          <div class="col-md-2">
-            <div class="contact-email">              
-              <h3>Range</h3>
-              <div id="range_result"></div>
-            </div>
-          </div>
-
-        </div>        
+        </div>
 
       </div>
-    </section><!-- End Contact Us Section -->
+    </section><!-- End Portfolio Details Section -->
 
   </main><!-- End #main -->
 
   <!-- ======= Footer ======= -->
   <footer id="footer">
     <div class="container">
-      <div class="copyright">
-        <strong><span>Danny</span></strong> Vernaza
-      </div>
-      <p>
-        <center><a href="../index.html">Home</a> <a href="#">Top</a></center>
-      </p>
-      <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/free-bootstrap-coming-soon-template-countdwon/ -->
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="copyright">
+            Danny Vernaza 2023
+          </div>
+          <div class="credits">
+            <!--
+            All the links in the footer should remain intact.
+            You can delete the links only if you purchased the pro version.
+            Licensing information: https://bootstrapmade.com/license/
+            Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Imperial
+          -->
+            Designed by <a href="https://bootstrapmade.com/imperial-free-onepage-bootstrap-theme/">BootstrapMade</a>
+          </div>
+        </div>
       </div>
     </div>
-  </footer><!-- End #footer -->
+  </footer><!-- End Footer -->
+
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->
-  <script src="assets/vendor/jquery/jquery.min.js"></script> 
+  <script src="assets/vendor/aos/aos.js"></script>
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <!-- <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script> -->
-  
-  
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/typed.js/typed.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>

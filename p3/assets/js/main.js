@@ -1,92 +1,258 @@
-//Results appear only when user clicks on Get Results Button
-document.addEventListener("DOMContentLoaded", function(){
-  document.getElementById("calculate").onclick = resultsOutputted;
-});
+/**
+* Template Name: Imperial
+* Updated: Mar 10 2023 with Bootstrap v5.2.3
+* Template URL: https://bootstrapmade.com/imperial-free-onepage-bootstrap-theme/
+* Author: BootstrapMade.com
+* License: https://bootstrapmade.com/license/
+*/
+(function() {
+  "use strict";
 
-
-//Function where everything happens
-function resultsOutputted()
-{
-  //Clearing old data
-  document.getElementById("max_result").innerHTML="";
-  document.getElementById("min_result").innerHTML="";
-  document.getElementById("avg_result").innerHTML="";
-  document.getElementById("median_result").innerHTML="";
-  document.getElementById("range_result").innerHTML="";
-
-  //Get Numbers User Input
-  var firstNumTemp =  parseInt(document.getElementById("num1").value);
-  var secondNumTemp =  parseInt(document.getElementById("num2").value);
-  var thirdNumTemp =  parseInt(document.getElementById("num3").value);  
-
-  //error checking
-  if (Number.isNaN(firstNumTemp) || Number.isNaN(secondNumTemp) || Number.isNaN(thirdNumTemp) ){
-    console.log("Not a number");
-    document.getElementById("results").innerHTML="Please Only Input Numbers";
+  /**
+   * Easy selector helper function
+   */
+  const select = (el, all = false) => {
+    el = el.trim()
+    if (all) {
+      return [...document.querySelectorAll(el)]
+    } else {
+      return document.querySelector(el)
+    }
   }
-  else{
 
-    console.log("All numbers")
-    document.getElementById("results").innerHTML="Results";
+  /**
+   * Easy event listener function
+   */
+  const on = (type, el, listener, all = false) => {
+    let selectEl = select(el, all)
+    if (selectEl) {
+      if (all) {
+        selectEl.forEach(e => e.addEventListener(type, listener))
+      } else {
+        selectEl.addEventListener(type, listener)
+      }
+    }
+  }
 
-    //Initializing the output values to zero
-    var max, min, mean, median, range = 0;
+  /**
+   * Easy on scroll event listener 
+   */
+  const onscroll = (el, listener) => {
+    el.addEventListener('scroll', listener)
+  }
 
-    //Organize Numbers
-    var nums = [firstNumTemp, secondNumTemp, thirdNumTemp];
-    nums.sort(function(a, b){return a - b});
+  /**
+   * Navbar links active state on scroll
+   */
+  let navbarlinks = select('#navbar .scrollto', true)
+  const navbarlinksActive = () => {
+    let position = window.scrollY + 300
+    navbarlinks.forEach(navbarlink => {
+      if (!navbarlink.hash) return
+      let section = select(navbarlink.hash)
+      if (!section) return
+      if (position >= section.offsetTop && position <= (section.offsetTop + section.offsetHeight)) {
+        navbarlink.classList.add('active')
+      } else {
+        navbarlink.classList.remove('active')
+      }
+    })
+  }
+  window.addEventListener('load', navbarlinksActive)
+  onscroll(document, navbarlinksActive)
 
-    firstNum = nums[0];
-    secondNum = nums[1];
-    thirdNum = nums[2];
+  /**
+   * Scrolls to an element with header offset
+   */
+  const scrollto = (el) => {
+    let header = select('#header')
+    let offset = header.offsetHeight
 
-    // Min Max
-    min = firstNum;
-    max = thirdNum;
+    let elementPos = select(el).offsetTop
+    window.scrollTo({
+      top: elementPos - offset,
+      behavior: 'smooth'
+    })
+  }
 
-    //Median
-    median = secondNum;
+  /**
+   * Header fixed top on scroll
+   */
+  let selectHeader = select('#header')
+  if (selectHeader) {
+    let headerOffset = selectHeader.offsetTop
+    let nextElement = selectHeader.nextElementSibling
+    const headerFixed = () => {
+      if ((headerOffset - window.scrollY) <= 0) {
+        selectHeader.classList.add('fixed-top')
+        nextElement.classList.add('scrolled-offset')
+      } else {
+        selectHeader.classList.remove('fixed-top')
+        nextElement.classList.remove('scrolled-offset')
+      }
+    }
+    window.addEventListener('load', headerFixed)
+    onscroll(document, headerFixed)
+  }
 
-    //Find Mean(avg)
-    var sum = 0;
-    var totalDigits = 3;
-    sum = firstNum + secondNum + thirdNum;
-    meanTemp = (sum/totalDigits);
-    mean = meanTemp.toFixed(2);   
+  /**
+   * Back to top button
+   */
+  let backtotop = select('.back-to-top')
+  if (backtotop) {
+    const toggleBacktotop = () => {
+      if (window.scrollY > 100) {
+        backtotop.classList.add('active')
+      } else {
+        backtotop.classList.remove('active')
+      }
+    }
+    window.addEventListener('load', toggleBacktotop)
+    onscroll(document, toggleBacktotop)
+  }
 
-    //Find Range  
-    range = thirdNum - firstNum;
+  /**
+   * Mobile nav toggle
+   */
+  on('click', '.mobile-nav-toggle', function(e) {
+    select('#navbar').classList.toggle('navbar-mobile')
+    this.classList.toggle('bi-list')
+    this.classList.toggle('bi-x')
+  })
 
-    //--------------------------------------------------------------
-    //                          Output Values
-    //--------------------------------------------------------------
+  /**
+   * Mobile nav dropdowns activate
+   */
+  on('click', '.navbar .dropdown > a', function(e) {
+    if (select('#navbar').classList.contains('navbar-mobile')) {
+      e.preventDefault()
+      this.nextElementSibling.classList.toggle('dropdown-active')
+    }
+  }, true)
 
-    //MAX
-    var maxMax = document.createElement('p');
-    maxMax.innerHTML =  max;
-    document.getElementById("max_result").appendChild(maxMax);
+  /**
+   * Scrool with ofset on links with a class name .scrollto
+   */
+  on('click', '.scrollto', function(e) {
+    if (select(this.hash)) {
+      e.preventDefault()
 
+      let navbar = select('#navbar')
+      if (navbar.classList.contains('navbar-mobile')) {
+        navbar.classList.remove('navbar-mobile')
+        let navbarToggle = select('.mobile-nav-toggle')
+        navbarToggle.classList.toggle('bi-list')
+        navbarToggle.classList.toggle('bi-x')
+      }
+      scrollto(this.hash)
+    }
+  }, true)
 
-    //MIN
-    var minMin = document.createElement('p');
-    minMin.innerHTML = min;
-    document.getElementById("min_result").appendChild(minMin);
+  /**
+   * Scroll with ofset on page load with hash links in the url
+   */
+  window.addEventListener('load', () => {
+    if (window.location.hash) {
+      if (select(window.location.hash)) {
+        scrollto(window.location.hash)
+      }
+    }
+  });
 
-    //MEAN(AVG)
-    var meanMean = document.createElement('p');
-    meanMean.innerHTML = mean;
-    document.getElementById("avg_result").appendChild(meanMean);
+  /**
+   * Preloader
+   */
+  let preloader = select('#preloader');
+  if (preloader) {
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        preloader.remove()
+      }, 100);
+    });
+  }
 
-    //MEDIAN
-    var medianMedian = document.createElement('p');
-    medianMedian.innerHTML = median;
-    document.getElementById("median_result").appendChild(medianMedian);
+  /**
+   * Hero type effect
+   */
+  const typed = select('.typed')
+  if (typed) {
+    let typed_strings = typed.getAttribute('data-typed-items')
+    typed_strings = typed_strings.split(',')
+    new Typed('.typed', {
+      strings: typed_strings,
+      loop: true,
+      typeSpeed: 100,
+      backSpeed: 50,
+      backDelay: 2000
+    });
+  }
 
-    //RANGE
-    var rangeRange = document.createElement('p');
-    rangeRange.innerHTML = range;
-    document.getElementById("range_result").appendChild(rangeRange);
-  }  
+  /**
+   * Porfolio isotope and filter
+   */
+  window.addEventListener('load', () => {
+    let portfolioContainer = select('.portfolio-container');
+    if (portfolioContainer) {
+      let portfolioIsotope = new Isotope(portfolioContainer, {
+        itemSelector: '.portfolio-item',
+        layoutMode: 'fitRows'
+      });
 
-}
+      let portfolioFilters = select('#portfolio-flters li', true);
 
+      on('click', '#portfolio-flters li', function(e) {
+        e.preventDefault();
+        portfolioFilters.forEach(function(el) {
+          el.classList.remove('filter-active');
+        });
+        this.classList.add('filter-active');
+
+        portfolioIsotope.arrange({
+          filter: this.getAttribute('data-filter')
+        });
+        aos_init();
+      }, true);
+    }
+
+  });
+
+  /**
+   * Initiate portfolio lightbox 
+   */
+  const portfolioLightbox = GLightbox({
+    selector: '.portfolio-lightbox'
+  });
+
+  /**
+   * Portfolio details slider
+   */
+  new Swiper('.portfolio-details-slider', {
+    speed: 400,
+    loop: true,
+    autoplay: {
+      delay: 5000,
+      disableOnInteraction: false
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      type: 'bullets',
+      clickable: true
+    }
+  });
+
+  /**
+   * Animation on scroll
+   */
+  function aos_init() {
+    AOS.init({
+      duration: 1000,
+      easing: "ease-in-out",
+      once: true,
+      mirror: false
+    });
+  }
+  window.addEventListener('load', () => {
+    aos_init();
+  });
+
+})()
