@@ -1,314 +1,195 @@
 <!DOCTYPE html>
 <html lang="en">
-   <head>
-      <!-- basic -->
-      <meta charset="utf-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <!-- mobile metas -->
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <meta name="viewport" content="initial-scale=1, maximum-scale=1">
-      <!-- site metas -->
-      <title>Project 4</title>
-      <meta name="keywords" content="">
-      <meta name="description" content="">
-      <meta name="author" content="">
-      <!-- bootstrap css -->
-      <link rel="stylesheet" href="css/bootstrap.min.css">
-      <!-- style css -->
-      <link rel="stylesheet" href="css/style.css">
-      <!-- Responsive-->
-      <link rel="stylesheet" href="css/responsive.css">
-      <!-- fevicon -->
-      <link rel="icon" href="images/fevicon.png" type="image/gif" />
-      <!-- Scrollbar Custom CSS -->
-      <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
-      <!-- Tweaks for older IEs-->
-      <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
-      <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
-   </head>
-   <!-- body -->
-   <body class="main-layout">
-      <!-- loader  -->
-      <div class="loader_bg">
-         <div class="loader"><img src="images/loading.gif" alt="#" /></div>
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Weather App Details</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Facebook Opengraph integration: https://developers.facebook.com/docs/sharing/opengraph -->
+  <meta property="og:title" content="">
+  <meta property="og:image" content="">
+  <meta property="og:url" content="">
+  <meta property="og:site_name" content="">
+  <meta property="og:description" content="">
+
+  <!-- Twitter Cards integration: https://dev.twitter.com/cards/  -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="">
+  <meta name="twitter:title" content="">
+  <meta name="twitter:description" content="">
+  <meta name="twitter:image" content="">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Imperial
+  * Updated: Mar 10 2023 with Bootstrap v5.2.3
+  * Template URL: https://bootstrapmade.com/imperial-free-onepage-bootstrap-theme/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="d-flex align-items-center">
+    <div class="container d-flex align-items-center justify-content-between">
+
+      <a href="../index.html" class="logo mr-auto"><img src="assets/img/logo.png" alt="Vernaza"></a>
+      <!-- Uncomment below if you prefer to use a text logo -->
+      <!-- <h1 class="logo mr-auto"><a href="index.html">Imperial</a></h1> -->
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto " href="../index.html">Home</a></li>                  
+          <li class="dropdown"><a href="../index.html#portfolio"><span>Projects</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="../p1/index.html">Resume</a></li>              
+              <li><a href="../p2/index.html">Library Databse</a></li>
+              <li><a href="../p3/index.html">Home Security</a></li>
+              <li><a href="#">Weather App</a></li>
+            </ul>
+          </li>
+          <li><a class="nav-link scrollto" href="../index.html#contact">Contact</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+  <main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section id="breadcrumbs" class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>Project Details</h2>
+          <ol>
+            <li><a href="../index.html">Home</a></li>
+            <li>Project Details</li>
+          </ol>
+        </div>
+
       </div>
-      <div class="wrapper">
-         <!-- end loader -->
-         <div class="sidebar">
-            <!-- Sidebar  -->
-            <nav id="sidebar">
-               <div id="dismiss">
-                  <i class="fa fa-arrow-left"></i>
-               </div>
-               <ul class="list-unstyled components">
-                  <li >
-                     <a href="../index.html">My Projects</a>
-                  </li>
-                  <li>
-                     <a href="#">Top</a>
-                  </li>
-                  <li>
-                     <a href="#about">About</a>
-                  </li>
-                  <li>
-                     <a href="#game">Games</a>
-                  </li>
-                  <li>
-                     <a href="#play">Play Game</a>
-                  </li>
-                  <li>
-                     <a href="#contact">Contact</a>
-                  </li>
-               </ul>
-            </nav>
-         </div>
-         <div id="content">
-            <!-- header -->
-            <header>
-               <!-- header inner -->
-               <div class="head_top">
-                  <div class="header">
-                     <div class="container-fluid">
-                        <div class="row">
-                           <div class="col-md-3 logo_section">
-                              <div class="full">
-                                 <div class="center-desk">
-                                    <div class="logo">
-                                       <a href="index.html"><img src="images/logo.png" alt="#" height="60"></a>
-                                    </div>
-                                 </div>
-                              </div>
-                           </div>
-                           <div class="col-md-9">
-                              <div class="right_header_info">
-                                 <ul>                                    
-                                    <li>
-                                       <button type="button" id="sidebarCollapse">
-                                       <img src="images/menu_icon.png" alt="Menu" />
-                                       </button>
-                                    </li>
-                                 </ul>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </header>
-            <!-- end header inner -->
-            <!-- end header -->
-            <section class="slider_section">
-               <div class="banner_main">
-                  <center><img src="images/bg_main.jpg" alt="#"/></center>
-                  <div class="container-fluid padding3">
-                     <div class="row">
-                        <div class="col-md-12">
-                           <div class="text-bg">
-                              <a href="#play">Play now</a>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </section>
-         <!-- Categories -->
-         <!-- casino -->
-         <div id="game" class="casino">
-            <div class="container">
-               <div class="row">
-                  <div class="col-md-12">
-                     <div class="titlepage">
-                        <h2>Our Games</h2>
-                        <span></span>
-                     </div>
-                  </div>
-               </div>
-               <div class="row">
-                  <div class="col-md-4 padding_bottom">
-                     <div class="game_box">
-                        <figure><img src="images/game1.png" alt="#"/></figure>
-                     </div>
-                     <div class="game">
-                        <h3>Game 1</h3>
-                     </div>
-                  </div>
-                  <div class="col-md-4 padding_bottom">
-                     <div class="game_box">
-                        <figure><img src="images/game2.jpg" alt="#" height="300"/></figure>
-                     </div>
-                     <div class="game">
-                        <h3>Game 2</h3>
-                     </div>
-                  </div>
-                  <div class="col-md-4 padding_bottom">
-                     <div class="game_box">
-                        <figure><img src="images/game2.jpg" alt="#"/></figure>
-                     </div>
-                     <div class="game">
-                        <h3>Game 3</h3>
-                     </div>
-                  </div>               
-               </div>
-            </div>
-         </div>
-         <!-- end casino -->
-         <!-- licens -->
-         <div class="licens">
-            <div class="container">
-               <div class="row">
-                  <div class="col-md-12">
-                     <div id="about" class="titlepage">
-                        <h2>About Game</h2>
-                        <span></span>
-                     </div>
-                  </div>
-               </div>
-               <div class="row">                  
-                  <div class="col-md-12">                     
-                     <div class="two_box">
-                        <div class="row d_flex">
-                           <div class="col-md-4">
-                              <div class="many_box_img">
-                                 <figure><img src="images/imag.jpg" alt="#"/></figure>
-                              </div>
-                           </div>
-                           <div class="col-md-8">
-                              <div class="many_box">
-                                 <div class="address"><h3>TIC-TAC-TOE</h3></div>
-                                 <p>Tic-tac-toe, noughts and crosses, or Xs and Os/“X’y O’sies”, is a game for two players, X and O, who take turns marking the spaces in a 3×3 grid. The player who succeeds in placing three of their marks in a diagonal, horizontal, or vertical row is the winner
-                                 </p>                                 
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div>
-         <!-- end lLicens -->  
-         
-          
+    </section><!-- End Breadcrumbs -->
 
-         <!-- play -->
-         <div class="licens">
-            <div class="container">
-               <div class="row">
-                  <div class="col-md-12">
-                     <div id="play" class="titlepage">
-                        <h2>Play Game</h2>
-                        <span></span>
-                     </div>
-                  </div>
-               </div>
-               <div class="center">               
-                  <div class="many_box">
-                     <div class="address center"><h3>TIC-TAC-TOE</h3></div>
-                     <div id="tictactoe" ></div><br>
-                     <div class="center"><button  type="button" id="startover" ><a>Start Over</a></button></div><br>                                 
-                     <p id="theWinner"></p><br>                                 
-                  </div>                          
-               </div>
-            </div>
-         </div>
-         <!-- end play--> 
-         
+    <!-- ======= Portfolio Details Section ======= -->
+    <section id="portfolio-details" class="portfolio-details">
+      <div class="container">
 
-         
-         <!--  footer -->
-         <footer>
-            <div class="footer">
-               <div class="container">
-                  <div class="row">
-                     <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 ">
-                        
-                     </div>
-                     <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-                        <div class="row">
-                           <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
-                              <div class="address">
-                                 <h3>Links</h3>
-                                 <ul class="Menu_footer">
-                                    <li><a href="../index.html">My Projects</a> </li> 
-                                    <li class="active"> <a href="#">Top</a> </li>
-                                    <li><a href="#about">About</a> </li>
-                                    <li><a href="#game">Games</a> </li>                                                                       
-                                 </ul>
-                              </div>
-                           </div>
-                           <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
-                              <div class="address" id="contact">
-                                 <h3>Contact us</h3>
-                                 <ul class="Links_footer">
-                                    <li>Danny Vernaza, <a href="mailto:dvernaza2019@fau.edu">dvernaza2019@fau.edu</a></li>
-                                 </ul>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-               <div class="copyright">
-                  <div class="container">
-                     <p>Copyright 2019 All Right Reserved By <a href="https://html.design/">Free html Templates</a></p>
-                  </div>
-               </div>
+        <div class="row gy-4">
+
+          <div class="col-lg-8">
+            <div class="portfolio-details-slider swiper">
+              <div class="swiper-wrapper align-items-center">
+
+                <div class="swiper-slide">
+                  <img src="assets/img/portfolio/portfolio-details-1.jpg" alt="">
+                </div>
+
+                <div class="swiper-slide">
+                  <img src="assets/img/portfolio/portfolio-details-2.jpg" alt="">
+                </div>
+
+                <div class="swiper-slide">
+                  <img src="assets/img/portfolio/portfolio-details-3.jpg" alt="">
+                </div>
+
+                <div class="swiper-slide">
+                  <img src="assets/img/portfolio/portfolio-details-4.jpg" alt="">
+                </div>
+
+              </div>
+              <div class="swiper-pagination"></div>
             </div>
-         </footer>
-         <!-- end footer -->
+          </div>
+
+          <div class="col-lg-4">
+            <div class="portfolio-info">
+              <h3>Project information</h3>
+              <ul>
+                <li><strong>Category</strong>: Mobile App</li>
+                <li><strong>Tools Used</strong>: Android Studio, Java, JSON, Text to Speech, Speech to text API, Open Weather API, Postman, GPS, Google Maps </li>               
+                <li><strong>Project Repo</strong>: <a href="https://github.com/dannyvc2022/WeatherApp">https://github.com/dannyvc2022/WeatherApp</a></li>
+                <br>
+                <p>Designed and created a weather app for android. The application can take voice, GPS or text input and display weather information of the desired location,
+                   a map with cloud coverage, as well as weather history for the last 5 days </p>                  
+              </ul>
+            </div>
+            <div class="portfolio-description">
+              <h2>Video Presentation</h2>
+              <p>
+                <iframe width="440" height="235" src="https://www.youtube.com/embed/EsB8t9NekR0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+              </p>
+            </div>
+          </div>
+
+        </div>
+
       </div>
-      <div class="overlay"></div>
-      <!-- Javascript files-->
-      <script src="js/jquery.min.js"></script>
-      <script src="js/popper.min.js"></script>
-      <script src="js/bootstrap.bundle.min.js"></script>
-      <script src="js/jquery-3.0.0.min.js"></script>
-      <!-- sidebar -->
-      <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
-      <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
-       <script src="js/custom.js"></script>
-      <script type="text/javascript">
-         $(document).ready(function() {
-             $("#sidebar").mCustomScrollbar({
-                 theme: "minimal"
-             });
-         
-             $('#dismiss, .overlay').on('click', function() {
-                 $('#sidebar').removeClass('active');
-                 $('.overlay').removeClass('active');
-             });
-         
-             $('#sidebarCollapse').on('click', function() {
-                 $('#sidebar').addClass('active');
-                 $('.overlay').addClass('active');
-                 $('.collapse.in').toggleClass('in');
-                 $('a[aria-expanded=true]').attr('aria-expanded', 'false');
-             });
-         });
-      </script>
-      <script>
-         $(document).ready(function() {
-             $(".fancybox").fancybox({
-                 openEffect: "none",
-                 closeEffect: "none"
-             });
-         
-             $(".zoom").hover(function() {
-         
-                 $(this).addClass('transition');
-             }, function() {
-         
-                 $(this).removeClass('transition');
-             });
-         });
-      </script>
+    </section><!-- End Portfolio Details Section -->
 
-      <script type="application/javascript" src="js/tictactoe.js"> </script>
+  </main><!-- End #main -->
 
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="copyright">
+            Danny Vernaza 2023
+          </div>
+          <div class="credits">
+            <!--
+            All the links in the footer should remain intact.
+            You can delete the links only if you purchased the pro version.
+            Licensing information: https://bootstrapmade.com/license/
+            Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Imperial
+          -->
+            Designed by <a href="https://bootstrapmade.com/imperial-free-onepage-bootstrap-theme/">BootstrapMade</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
 
-     
-   </body>
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/typed.js/typed.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
 </html>
-
